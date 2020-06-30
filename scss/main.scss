@@ -1,0 +1,192 @@
+@import '../scss/vars';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Muli', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+body, html {
+    height: 100%;
+    color: $primary;
+    font-weight: $normal;
+} 
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.insights-container {
+    width: 1000px;
+    padding: 60px;
+}
+
+.insights {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border;
+        padding-bottom: 30px;
+    }
+    &__header-left {
+        display: flex;
+        align-items: center;
+    }
+    &__header-profile-image {
+        overflow: hidden;
+        width: 112px;
+        margin-right: 15px;
+        img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
+    }
+    &__header-profile-name {
+        font-size: 26px;
+    }
+    &__nav {
+        display: flex;
+        margin-left: -20px;
+        margin-top: 10px;
+    }
+    &__nav-item {
+        outline: none;
+        cursor: pointer;
+        transition: all 200ms ease-in-out;
+        &:hover .insights__nav-link, &:focus .insights__nav-link {
+            opacity: 1;
+        }
+        &:focus {
+            box-shadow: $outline-shadow;
+        }
+    }
+    &__nav-link {
+        color: $primary;
+        opacity: 0.7;
+        padding: 10px 20px;
+        display: inline-block;
+        outline: none;
+        transition: all 200ms ease-in-out;
+        &--active {
+            color: $primary;
+            font-weight: $bold;
+        }
+    }
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin-top: 26px;
+        margin-bottom: 45px;
+    }
+    &__topbar-select-container {
+        position: relative;
+        outline: none;
+        transition: box-shadow 200ms ease-in-out;
+        &:focus {
+            box-shadow: $outline-shadow;
+        }
+    }
+    &__topbar-select-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+    &__topbar-select {
+        font-size: 16px;
+        color: $primary;
+        appearance: none; 
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 4px 16px;
+    }
+
+    &__cards {
+        display: flex;
+        margin: -13px;
+    }
+    &__card {
+        padding: 20px;
+        flex: 1;
+        margin: 13px;
+        border-radius: 10px;
+        border: 1px solid $border;
+        &--active {
+            background: $primary;
+            color: #fff;
+        }
+    }
+    &__card-top, &__card-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__card-top {
+        margin-bottom: 12px;
+    }
+    &__card-top-metric {
+        color: $secondary;
+        display: flex;
+        align-items: center;
+    }
+    &__card-top-metric-text {
+        margin-left: 5px;
+    }
+    &__card-top-heading {
+        font-size: 16px;
+        font-weight: $bold;
+    }
+    &__card-bottom-heading {
+        font-size: 26px;
+        font-weight: $bold;
+    }
+    &__card-bottom-more {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__card-bottom-more-text {
+        margin-right: 5px;
+        opacity: 0.7;
+    }
+}
+
+.insights-btn {
+    background: $primary;
+    border: none;
+    outline: none;
+    transition: all 200ms ease-in-out;
+    &:hover {
+        background: lighten($color: $primary, $amount: 8%);
+    }
+    &:focus {
+        box-shadow: $outline-shadow;
+    }
+    &__inner {
+        display: flex;
+        padding: 15px 30px;
+        align-items: center;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    &__inner-text {
+        font-size: 16px;
+        font-weight: $bold;
+        margin-left: 6px;
+    }
+}
